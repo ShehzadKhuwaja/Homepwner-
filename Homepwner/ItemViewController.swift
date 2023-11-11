@@ -27,6 +27,18 @@ class ItemViewController: UITableViewController {
         return itemStore.allItems.count + 1
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.row != itemStore.allItems.count
+    }
+    
+    override func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+        if proposedDestinationIndexPath.row == itemStore.allItems.count {
+            return sourceIndexPath
+        } else {
+            return proposedDestinationIndexPath
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Get a new or recycled cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
@@ -85,6 +97,7 @@ class ItemViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         // Update the model
         itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
+        
     }
     
     @IBAction func addNewItem(_ sender: UIButton) {
