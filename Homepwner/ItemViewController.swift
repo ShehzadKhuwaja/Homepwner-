@@ -24,7 +24,7 @@ class ItemViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return itemStore.allItems.count
+        return itemStore.allItems.count + 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -36,11 +36,22 @@ class ItemViewController: UITableViewController {
         // that is at the nth number of items, where n = row this cell
         // will appear in on the table view
         
-        let item = itemStore.allItems[indexPath.row]
-        cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = "$\(item.valueInDollars)"
-        return cell
+        if indexPath.row < itemStore.allItems.count {
+            let item = itemStore.allItems[indexPath.row]
+            cell.textLabel?.text = item.name
+            cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+            return cell
+        } else {
+            cell.textLabel?.text = "No More Items"
+            cell.detailTextLabel?.text = ""
+            return cell
+        }
         
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        // this method changes title for delete button which shows up in edit mode when you click the minus button
+        return "Remove"
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
