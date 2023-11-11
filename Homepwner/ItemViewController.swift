@@ -19,6 +19,8 @@ class ItemViewController: UITableViewController {
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
         
+        tableView.rowHeight = 65
+        
     }
     
     
@@ -41,7 +43,7 @@ class ItemViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Get a new or recycled cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         
         
         // Set the text on the cell with the description of the item
@@ -50,12 +52,14 @@ class ItemViewController: UITableViewController {
         
         if indexPath.row < itemStore.allItems.count {
             let item = itemStore.allItems[indexPath.row]
-            cell.textLabel?.text = item.name
-            cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+            cell.nameLabel.text = item.name
+            cell.serialNumberLabel.text = item.serialNumber
+            cell.valueLabel.text = "$\(item.valueInDollars)"
             return cell
         } else {
-            cell.textLabel?.text = "No More Items"
-            cell.detailTextLabel?.text = ""
+            cell.nameLabel.text = "No More Items"
+            cell.serialNumberLabel.text = ""
+            cell.valueLabel.text = ""
             return cell
         }
         

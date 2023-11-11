@@ -17,6 +17,7 @@
 		044C77AD2AFE0A13005E88CA /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044C77AC2AFE0A13005E88CA /* ItemViewController.swift */; };
 		044C77B52AFE0BC8005E88CA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044C77B42AFE0BC8005E88CA /* Item.swift */; };
 		044C77BA2AFE13A3005E88CA /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044C77B92AFE13A3005E88CA /* ItemStore.swift */; };
+		047E91BD2B0017B00081E403 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E91BC2B0017B00081E403 /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		044C77AC2AFE0A13005E88CA /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		044C77B42AFE0BC8005E88CA /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		044C77B92AFE13A3005E88CA /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
+		047E91BC2B0017B00081E403 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				044C77AC2AFE0A13005E88CA /* ItemViewController.swift */,
 				044C77B42AFE0BC8005E88CA /* Item.swift */,
 				044C77B92AFE13A3005E88CA /* ItemStore.swift */,
+				047E91BC2B0017B00081E403 /* ItemCell.swift */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			files = (
 				044C77B52AFE0BC8005E88CA /* Item.swift in Sources */,
 				044C77AD2AFE0A13005E88CA /* ItemViewController.swift in Sources */,
+				047E91BD2B0017B00081E403 /* ItemCell.swift in Sources */,
 				044C777A2AFE080F005E88CA /* AppDelegate.swift in Sources */,
 				044C77BA2AFE13A3005E88CA /* ItemStore.swift in Sources */,
 				044C777C2AFE080F005E88CA /* SceneDelegate.swift in Sources */,
