@@ -19,8 +19,15 @@ class ItemViewController: UITableViewController {
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
         
-        tableView.rowHeight = 65
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 65
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
     }
     
     
@@ -54,6 +61,14 @@ class ItemViewController: UITableViewController {
             let item = itemStore.allItems[indexPath.row]
             cell.nameLabel.text = item.name
             cell.serialNumberLabel.text = item.serialNumber
+            
+            // setting text color for value label based on its value in $
+            if item.valueInDollars < 50 {
+                cell.valueLabel.textColor = .green
+            } else {
+                cell.valueLabel.textColor = .red
+            }
+            
             cell.valueLabel.text = "$\(item.valueInDollars)"
             return cell
         } else {
@@ -104,7 +119,7 @@ class ItemViewController: UITableViewController {
         
     }
     
-    @IBAction func addNewItem(_ sender: UIButton) {
+    @IBAction func addNewItem(_ sender: UIBarButtonItem) {
         // Create a new item and add it to the store
         let newItem = itemStore.createItem()
         
@@ -132,4 +147,27 @@ class ItemViewController: UITableViewController {
             setEditing(true, animated: true)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // if the triggered segue is the "showItem" segue
+        switch segue.identifier {
+        case "showItem"?:
+            // Figure out which row was tapped
+            if let row = tableView.indexPathForSelectedRow?.row {
+                // Get the item associated with this row and pass it along
+                let item = itemStore.allItems[row]
+                let detailViewController = segue.destination as! DetailViewController
+                detailViewController.item = item
+            }
+        default:
+            preconditionFailure("Unexpected Segue Identifier.")
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem
+    }
+    
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043F25962B00CBE800C6E1D1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F25952B00CBE800C6E1D1 /* DetailViewController.swift */; };
 		044C777A2AFE080F005E88CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044C77792AFE080F005E88CA /* AppDelegate.swift */; };
 		044C777C2AFE080F005E88CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044C777B2AFE080F005E88CA /* SceneDelegate.swift */; };
 		044C77812AFE080F005E88CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044C777F2AFE080F005E88CA /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		043F25952B00CBE800C6E1D1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		044C77762AFE080F005E88CA /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		044C77792AFE080F005E88CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		044C777B2AFE080F005E88CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				044C77B42AFE0BC8005E88CA /* Item.swift */,
 				044C77B92AFE13A3005E88CA /* ItemStore.swift */,
 				047E91BC2B0017B00081E403 /* ItemCell.swift */,
+				043F25952B00CBE800C6E1D1 /* DetailViewController.swift */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				044C777A2AFE080F005E88CA /* AppDelegate.swift in Sources */,
 				044C77BA2AFE13A3005E88CA /* ItemStore.swift in Sources */,
 				044C777C2AFE080F005E88CA /* SceneDelegate.swift in Sources */,
+				043F25962B00CBE800C6E1D1 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
