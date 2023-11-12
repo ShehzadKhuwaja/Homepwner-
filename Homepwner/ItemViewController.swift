@@ -12,13 +12,6 @@ class ItemViewController: UITableViewController {
     var itemStore: ItemStore = ItemStore()
     
     override func viewDidLoad() {
-        // Get the status bar height
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        
-        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
-        tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
-        
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 65
         
@@ -132,21 +125,6 @@ class ItemViewController: UITableViewController {
         }
     }
     
-    @IBAction func toggleEditingMode(_ sender: UIButton) {
-        if isEditing {
-            // Change text of button to inform user of state
-            sender.setTitle("Edit", for: .normal)
-            
-            // Turn off editing mode
-            setEditing(false, animated: true)
-        } else {
-            // Change text of button to inform user of state
-            sender.setTitle("Done", for: .normal)
-            
-            // Turn on editing mode
-            setEditing(true, animated: true)
-        }
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // if the triggered segue is the "showItem" segue
